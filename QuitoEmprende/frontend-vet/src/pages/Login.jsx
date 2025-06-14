@@ -52,6 +52,26 @@ const Login = () => {
                             </div>
                         </div>
 
+
+                        
+                        {/* --------- */}
+                        {/* Selección de rol */}
+                        <div className="mb-3">
+                        <label htmlFor="role" className="mb-2 block text-sm font-semibold">Selecciona tu rol</label>
+                        <select
+                            id="role"
+                            name="role"
+                            className="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-2 text-gray-500"
+                        >
+                            <option value="">-- Selecciona un rol --</option>
+                            <option value="admin">Administrador</option>
+                            <option value="editor">Emprendedor</option>
+                            <option value="user">Cliente</option>
+                        </select>
+                        </div>
+                        
+                                        
+
                         {/* Botón de iniciar sesión */}
                         <div className="my-4">
                             <Link to="/dashboard" className="py-2 w-full block text-center bg-gray-500 text-slate-300 border rounded-xl hover:scale-100 duration-300 hover:bg-gray-900 hover:text-white">Iniciar sesión</Link>
