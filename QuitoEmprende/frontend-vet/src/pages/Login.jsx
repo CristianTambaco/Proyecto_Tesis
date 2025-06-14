@@ -63,8 +63,7 @@ const Login = () => {
                             name="role"
                             className="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-2 text-gray-500"
                         >
-                            <option value="">-- Selecciona un rol --</option>
-                            <option value="admin">Administrador</option>
+                            <option value="">Administrador</option>                            
                             <option value="editor">Emprendedor</option>
                             <option value="user">Cliente</option>
                         </select>
