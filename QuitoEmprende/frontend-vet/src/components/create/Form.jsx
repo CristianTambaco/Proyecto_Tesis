@@ -4,7 +4,7 @@ import { useState } from "react";
 export const Form = () => {
 
     const [stateAvatar, setStateAvatar] = useState({
-        generatedImage: "https://cdn-icons-png.flaticon.com/512/2138/2138440.png",
+        generatedImage: "https://cdn-icons-png.flaticon.com/512/10215/10215218.png",
         prompt: "",
         loading: false
     })
@@ -75,7 +75,7 @@ export const Form = () => {
             {/* Información de la mascota */}
             <fieldset className="border-2 border-gray-500 p-6 rounded-lg shadow-lg mt-10">
                 <legend className="text-xl font-bold text-gray-700 bg-gray-200 px-4 py-1 rounded-md">
-                    Información de la mascota
+                    Información del producto
                 </legend>
 
                 {/* Nombre de la mascota */}
@@ -89,7 +89,7 @@ export const Form = () => {
                 </div>
 
                 {/* Imagen de la mascota*/}
-                <label className="mb-2 block text-sm font-semibold">Imagen de la mascota</label>
+                <label className="mb-2 block text-sm font-semibold">Imagen del producto</label>
                 <div className="flex gap-4 mb-2">
                     {/* Opción: Imagen con IA */}
                     <label className="flex items-center gap-2">
@@ -155,15 +155,15 @@ export const Form = () => {
                         className='block w-full rounded-md border border-gray-300 py-1 px-2 text-gray-500 mb-5'
                     >
                         <option value="">--- Seleccionar ---</option>
-                        <option value="gato">Gato</option>
-                        <option value="perro">Perro</option>
+                        <option value="gato">Consumo</option>
+                        <option value="perro">Personalizado</option>
                         <option value="otro">Otro</option>
                     </select>
                 </div>
 
                 {/* Fecha de nacimiento */}
                 <div>
-                    <label className="mb-2 block text-sm font-semibold">Fecha de nacimiento</label>
+                    <label className="mb-2 block text-sm font-semibold">Fecha de vencimiento</label>
                     <input
                         type="date"
                         className="block w-full rounded-md border border-gray-300 py-1 px-2 text-gray-500 mb-5"
@@ -172,9 +172,9 @@ export const Form = () => {
 
                 {/* Síntomas */}
                 <div>
-                    <label className="mb-2 block text-sm font-semibold">Síntoma u observación</label>
+                    <label className="mb-2 block text-sm font-semibold">Detalles</label>
                     <textarea
-                        placeholder="Ingresa el síntoma u observación de forma general"
+                        placeholder="Ingresa la observación de forma general"
                         className="block w-full rounded-md border border-gray-300 py-1 px-2 text-gray-500 mb-5"
                     />
                 </div>
