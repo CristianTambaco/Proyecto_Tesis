@@ -17,41 +17,47 @@ import Reset from './pages/Reset'
 import ResetAdministrador from './pages/ResetAdministrador'
 import ResetCliente from './pages/ResetCliente'
 import ResetEmprendedor from './pages/ResetEmprendedor'
-
-
+import ProtectedRoute from './routers/ProtectedRoute'
+import PublicRoute from './routers/PublicRoute'
 
 
 
 function App() {
   return (
     <>
-    <BrowserRouter>
-      <Routes>
-        
-        <Route index element={<Home/>}/>
-        <Route path='login' element={<Login/>}/>
-        <Route path='register' element={<Register/>}/>
-        <Route path='forgot/:id' element={<Forgot/>}/>
-        <Route path='confirm/:token' element={<Confirm/>}/>
-        <Route path='reset/:token' element={<Reset/>}/>
-        <Route path='*' element={<NotFound />} />
-        <Route path='reset/admin/:token' element={<ResetAdministrador />} />
-        <Route path='reset/cliente/:token' element={<ResetCliente />} />
-        <Route path='reset/emprendedor/:token' element={<ResetEmprendedor />} />
+      <BrowserRouter>
+        <Routes>
 
-        <Route path='/dashboard' element={<Dashboard/>}>
-          <Route index element={<Profile/>}/>
-          <Route path='listar' element={<List/>}/>
-          <Route path='visualizar/:id' element={<Details/>}/>
-          <Route path='crear' element={<Create/>}/>
-          <Route path='actualizar/:id' element={<Update/>}/>
-          <Route path='chat' element={<Chat/>}/>
+          <Route element={<PublicRoute />}>
+            <Route index element={<Home />} />
+            <Route path='login' element={<Login />} />
+            <Route path='register' element={<Register />} />
+            <Route path='forgot/:id' element={<Forgot />} />
+            <Route path='confirm/:token' element={<Confirm />} />
+          </Route>
 
-        </Route>
+          <Route path='reset/:token' element={<Reset />} />
+          <Route path='reset/admin/:token' element={<ResetAdministrador />} />
+          <Route path='reset/cliente/:token' element={<ResetCliente />} />
+          <Route path='reset/emprendedor/:token' element={<ResetEmprendedor />} />
 
+          <Route path='/dashboard' element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }>
+            <Route index element={<Profile />} />
+            <Route path='listar' element={<List />} />
+            <Route path='visualizar/:id' element={<Details />} />
+            <Route path='crear' element={<Create />} />
+            <Route path='actualizar/:id' element={<Update />} />
+            <Route path='chat' element={<Chat />} />
+          </Route>
 
-      </Routes>
-    </BrowserRouter>
+          <Route path='*' element={<NotFound />} />
+
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
